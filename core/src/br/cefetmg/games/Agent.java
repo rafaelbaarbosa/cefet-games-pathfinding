@@ -107,11 +107,8 @@ public class Agent {
                 new Heuristic<TileNode>() { 
  
             @Override 
-            public float estimate(TileNode n, TileNode n1) { 
-                throw new UnsupportedOperationException("Deveria ter retornado "
-                        + "um valor para a heurística no arquivo "
-                        + "Agent.java:107, mas o professor resolveu explodir "
-                        + "o programa e deixar você consertar ;)"); 
+            public float estimate(TileNode n, TileNode n1) {
+                return n.getPosition().dst(n1.getPosition())/LevelManager.tileWidth;
             } 
         }, path); 
         pathIterator = path.iterator();
